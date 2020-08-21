@@ -1,0 +1,18 @@
+server:
+  port: 3372
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
+        prefix: ${spring.application.name}
+        #group: test-group
+  application:
+    name: nacos-config-client
+  profiles:
+    active: dev
+
+# ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension} 配置文件名称

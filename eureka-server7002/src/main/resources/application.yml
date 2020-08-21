@@ -1,0 +1,17 @@
+server:
+  port: 7002
+eureka:
+  instance:
+    hostname: 127.0.0.1:7002
+  client:
+    # 不注册自己
+    register-with-eureka: false
+    # 表示自己是注册中心，不用检索服务
+    fetch-registry: false
+    service-url:
+      # 单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      # 相互注册
+      defaultZone: http://127.0.0.1:7001/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000

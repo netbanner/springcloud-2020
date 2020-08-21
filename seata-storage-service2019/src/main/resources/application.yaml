@@ -1,0 +1,42 @@
+server:
+  port: 2019
+
+# nacos 配置
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: seata-storage-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/seata_storage
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+
+# #seata 配置
+seata:
+  application-id: ${spring.application.name}
+  enabled: true
+  tx-service-group: yyk_tx_group
+  service:
+    vgroup-mapping:
+      yyk_tx_group: default
+  config:
+    nacos:
+      namespace:
+      serverAddr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      username: "nacos"
+      password: "nacos"
+  registry:
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      namespace:
+        group : "SEATA_GROUP"
+      username: "nacos"
+      password: "nacos"

@@ -1,0 +1,44 @@
+server:
+  port: 2018
+
+# nacos 配置
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: seata-order-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/seata_order
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+
+feign:
+  hystrix:
+    enabled: false
+# #seata 配置
+seata:
+  application-id: ${spring.application.name}
+  enabled: true
+  tx-service-group: yyk_tx_group
+  config:
+    nacos:
+      namespace:
+      serverAddr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      username: "nacos"
+      password: "nacos"
+  registry:
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      namespace:
+      username: "nacos"
+      password: "nacos"
+  service:
+    vgroup-mapping:
+      yyk_tx_group: default
