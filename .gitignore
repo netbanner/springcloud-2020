@@ -35,8 +35,8 @@
 # .idea/jarRepositories.xml
 # .idea/modules.xml
 # .idea/*.iml
-# .idea/modules
-# *.iml
+.idea/
+*.iml
 # *.ipr
 
 # CMake
@@ -85,3 +85,35 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
+cloud-api-common/src/main/resources/
+cloud-api-common/src/test/
+cloud-config-center3370/src/test/
+cloud-config-client3271/src/test/
+cloud-config-client3371/src/test/
+cloud-config-nacos-client3372/src/test/
+cloud-consumer-consul-order80/src/test/
+cloud-consumer-feign-hystrix-order80/src/test/
+cloud-consumer-feign-order80/src/test/
+cloud-consumer-order80/src/test/
+cloud-consumer-zk-order80/src/test/
+cloud-gateway9270/src/test/
+cloud-provider-consul-payment8005/src/test/
+cloud-provider-hystrix-payment8001/src/test/
+cloud-provider-payment8001/src/test/
+cloud-provider-payment8002/src/test/
+cloud-provider-zk-payment8004/src/test/
+cloud-stream-rabbitmq-consumer8802/src/test/
+cloud-stream-rabbitmq-consumer8803/src/test/
+cloud-stream-rabbitmq-provider8801/src/test/
+cloudalibaba-consumer-order84/src/test/
+cloudalibaba-provider-payment9001/src/test/
+cloudalibaba-provider-payment9002/src/test/
+cloudalibaba-sentinel-service8400/src/test/
+cloudalibaba-sentinel-service8401/src/test/
+eureka-server7001/src/main/resources/templates/
+eureka-server7001/src/test/
+eureka-server7002/src/main/resources/templates/
+eureka-server7002/src/test/
+seata-account-service2020/src/test/
+seata-order-service2018/src/test/
+seata-storage-service2019/src/test/
